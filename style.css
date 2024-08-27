@@ -1,2 +1,16 @@
 /* Dine styles her */
-article {}
+:root {
+  --flow-space: 0.5rlh;
+}
+
+article > * {
+  margin-top: var(--flow-space);
+}
+
+article h2 {
+  --flow-space: 2rlh;
+}
+
+article h3 {
+  --flow-space: 1rlh;
+}
