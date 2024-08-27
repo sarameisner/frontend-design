@@ -14,3 +14,8 @@ article h2 {
 article h3 {
   --flow-space: 1rlh;
 }
+
+/* alle elementer der kommer efter h3 */
+article h3 + * {
+  --flow-space: 0.25rlh;
+}
