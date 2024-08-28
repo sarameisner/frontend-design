@@ -24,3 +24,7 @@ blockquote {
   grid-column: content-start / content-end;
   grid-column: full;
 }
+
+img {
+  grid-column: full;
+}
