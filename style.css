@@ -1,4 +1,26 @@
+/**** min opsættelse af grid-linjer ****/
+
+/* - min full-start & min full-end definerer den fulde bredde af hele viewporten
+   - min content-start & min content-end definerer det område hvor indholdet er */
 article {
-    max-width: 65ch;
-    margin-inline: auto;
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(1rem, 1fr)
+    [content-start] min(60ch, 100%) [content-end]
+    minmax(1rem, 1fr) [full-end];
+  gap: 1rem;
+  margin-inline: auto;
+}
+
+/**** placering af elementerne ****/
+
+/* - grid-column: content; placerer de elementerne inden for et normalt indholdsområde
+   - grid-column: full; sørger for at citat og img strækker sig på hele siden, altså breakout */
+article > * {
+  grid-column: content;
+}
+
+blockquote {
+  grid-column: content-start / content-end;
+  grid-column: full;
 }
