@@ -21,8 +21,9 @@ article > * {
 }
 
 blockquote {
-  grid-column: content-start / content-end;
   grid-column: full;
+  max-width: 85ch;
+  margin: 0 auto;
 }
 
 img {
