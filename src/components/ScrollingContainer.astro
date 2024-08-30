@@ -16,5 +16,13 @@ const { cardContent } = Astro.props;
 <style>
   ul {
     list-style: none;
+    display: flex;
+    gap: var(--card-gap);
+    overflow-x: auto;
+  }
+
+  .card {
+    flex: 0 0 auto;
+    padding: var(--card-padding);
   }
 </style>
