@@ -1,8 +1,6 @@
 ---
 import "../styles/global.css";
-
 import ScrollingContainer from "../components/ScrollingContainer.astro";
-
 import { cardContent } from "../data/card-content.js";
 ---
 
@@ -16,7 +14,7 @@ import { cardContent } from "../data/card-content.js";
   </head>
   <body>
     <main>
-      <section>
+      <section class="full">
         <header>
           <h2>Financial Projections</h2>
           <p>
@@ -34,10 +32,54 @@ import { cardContent } from "../data/card-content.js";
 </html>
 
 <style>
+  :root {
+    /* bredden af det hele */
+    --content-width: 50rem; 
+  }
+
   main {
     padding-block: 4rem; /* Kun af æstetiske årsager */
+    display: grid;
+    grid-template-columns: 
+      [full-start] 1fr 
+      [content] minmax(0, var(--content-width)) 
+      [full-end] 1fr;
+    column-gap: 1rem;
   }
-  section {
 
+  section.full {
+    grid-column: full;
+    display: grid;
+    grid-template-columns: inherit; 
+    row-gap: 3rem;
+  }
+
+  section.full > * {
+    /* indhold bliver placeret i den midterste kolonne */
+    grid-column: content; 
+  }
+
+  header {
+    color: #595566;
+    p {
+      max-inline-size: 67ch;
+    }
+  }
+
+  h2,
+  h3 {
+    /* all: revert;  */
+    color: #181818;
+    margin-block: 0 0.625rem;
+    line-height: 1.125;
+  }
+
+  h2 {
+    font-size: 2.8125rem;
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: 1.5625rem;
   }
 </style>
